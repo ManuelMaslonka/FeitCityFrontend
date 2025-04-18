@@ -42,6 +42,7 @@
       })(window, document, "script", "dataLayer", "GTM-KLS2RGQ");
     </script>
     <!-- End Google Tag Manager -->
+	  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- style sheets and font icons  -->
     <link rel="stylesheet" href="css/vendors.min.css" />
     <link rel="stylesheet" href="css/icon.min.css" />
@@ -61,150 +62,115 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!-- start header -->
-    <header>
-      <!-- start navigation -->
-      <nav
-        class="navbar navbar-expand-lg header-transparent bg-transparent disable-fixed"
-      >
-        <div class="container-fluid">
-          <div class="col-auto col-lg-2 me-lg-0 me-auto">
-            <a class="navbar-brand" href="/">
-              <img
-                src="feitImages/feit-logo-white.png"
-                data-at2x="feitImages/feit-logo-white@2x.png"
-                alt=""
-                class="default-logo"
-              />
-              <img
-                src="feitImages/feit-logo-black.png"
-                data-at2x="feitImages/feit-logo-black@2x.png"
-                alt=""
-                class="alt-logo"
-              />
-              <img
-                src="feitImages/feit-logo-black.png"
-                data-at2x="feitImages/feit-logo-black@2x.png"
-                alt=""
-                class="mobile-logo"
-              />
-            </a>
-          </div>
-          <div class="col-auto menu-order position-static">
-            <button
-              class="navbar-toggler float-start"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-line"></span>
-              <span class="navbar-toggler-line"></span>
-              <span class="navbar-toggler-line"></span>
-              <span class="navbar-toggler-line"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav alt-font ls-05px">
-                <li class="nav-item">
-                  <a href="/#ofakulte" class="nav-link">O fakulte</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/#preco" class="nav-link">Prečo na FEIT?</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/#costudovat" class="nav-link">Čo študovať?</a>
-                </li>
+	<div
+		  x-data="{
+menubar: {},
+loadMenuBar() {
+fetch('http://localhost:8080/api/v1/components/menu')
+.then(res => res.json())
+.then(data => this.menubar = data);
+}
+}" x-init="loadMenuBar()"
+	>
+		<header>
+			<!-- start navigation -->
+			<nav
+				  class="navbar navbar-expand-lg header-transparent bg-transparent disable-fixed"
+			>
+				<div class="container-fluid">
+					<div class="col-auto col-lg-2 me-lg-0 me-auto">
+						<a class="navbar-brand" href="/">
+							<img
+								  src="feitImages/feit-logo-white.png"
+								  data-at2x="feitImages/feit-logo-white@2x.png"
+								  alt=""
+								  class="default-logo"
+							/>
+							<img
+								  src="feitImages/feit-logo-black.png"
+								  data-at2x="feitImages/feit-logo-black@2x.png"
+								  alt=""
+								  class="alt-logo"
+							/>
+							<img
+								  src="feitImages/feit-logo-black.png"
+								  data-at2x="feitImages/feit-logo-black@2x.png"
+								  alt=""
+								  class="mobile-logo"
+							/>
+						</a>
+					</div>
+					<div class="col-auto menu-order position-static">
+						<button
+							  class="navbar-toggler float-start"
+							  type="button"
+							  data-bs-toggle="collapse"
+							  data-bs-target="#navbarNav"
+							  aria-controls="navbarNav"
+							  aria-label="Toggle navigation"
+						>
+							<span class="navbar-toggler-line"></span>
+							<span class="navbar-toggler-line"></span>
+							<span class="navbar-toggler-line"></span>
+							<span class="navbar-toggler-line"></span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarNav">
+							<ul class="navbar-nav alt-font ls-05px">
 
-                <li class="nav-item">
-                  <a href="dod" class="nav-link">DOD</a>
-                </li>
-                <li class="nav-item dropdown dropdown-with-icon">
-                  <a href="#" class="nav-link">Viac</a>
-                  <i
-                    class="fa-solid fa-angle-down dropdown-toggle"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  ></i>
-                  <ul
-                    class="dropdown-menu"
-                    aria-labelledby="navbarDropdownMenuLink"
-                  >
-                    <li>
-                      <a href="/#zivot">
-                        <div class="submenu-icon-content">
-                          <span>Študentský život</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/#poskole">
-                        <div class="submenu-icon-content">
-                          <span>Kam po škole?</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.feitcity.sk/specialne-cvicenia/"
-                        target="_blank"
-                      >
-                        <div class="submenu-icon-content">
-                          <span>Špeciálne cvičenia</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/#feitstory">
-                        <div class="submenu-icon-content">
-                          <span>FEITstory</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://feit.uniza.sk/tmr/" target="_blank">
-                        <div class="submenu-icon-content">
-                          <span>Technická myšlienka roka</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://www.feitcity.sk/blog/" target="_blank">
-                        <div class="submenu-icon-content">
-                          <span>Blog</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#kontakty">
-                        <div class="submenu-icon-content">
-                          <span>Kontakt</span>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a href="/#faq" class="nav-link">FAQ</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-auto col-lg-2 text-end xs-ps-0 xs-pe-0">
-            <div class="header-icon">
-              <div class="header-button">
-                <a
-                  href="prihlaska"
-                  class="btn btn-small text-transform-none btn-transparent-white-light border-1 left-icon btn-rounded fw-500"
-                  >Podaj Prihlášku</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+
+								<template x-for="menuItem in menubar.menuItems">
+									<li class="nav-item">
+										<a :href="menuItem.url" class="nav-link" x-text="menuItem.text"></a>
+									</li>
+								</template>
+
+
+								<template x-for="dropdownMenuItems in menubar.dropdownMenuItems">
+									<li class="nav-item dropdown dropdown-with-icon">
+										<a href="#" class="nav-link" x-text="dropdownMenuItems.text"></a>
+										<i
+											  class="fa-solid fa-angle-down dropdown-toggle"
+											  :id="'navbarDropdownMenuLink-' + $index"
+											  role="button"
+											  data-bs-toggle="dropdown"
+											  aria-expanded="false"
+										></i>
+										<ul
+											  class="dropdown-menu"
+											  :aria-labelledby="'navbarDropdownMenuLink-' + $index"
+										>
+											<template x-for="list in dropdownMenuItems.dropdownMenuItems">
+												<li>
+													<a :href="list.url">
+														<div class="submenu-icon-content">
+															<span x-text="list.text"></span>
+														</div>
+													</a>
+												</li>
+											</template>
+										</ul>
+									</li>
+								</template>
+
+							</ul>
+						</div>
+					</div>
+					<div class="col-auto col-lg-2 text-end xs-ps-0 xs-pe-0">
+						<div class="header-icon">
+							<div class="header-button">
+								<a
+									  :href="menubar.button.url"
+									  class="btn btn-small text-transform-none btn-transparent-white-light border-1 left-icon btn-rounded fw-500"
+									  x-text="menubar.button.text"
+								></a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+	</div>
     <!-- end header -->
 
     <!-- start page title -->
@@ -643,182 +609,156 @@
     </section>
     <!-- end section -->
     <!-- start footer -->
-    <footer
-      class="bg-extra-dark-slate-blue background-position-right-top background-no-repeat md-background-image-none"
-      style="background-image: url('feitImages/about-bg.png')"
-      id="kontakty"
-    >
-      <div class="container">
-        <div class="row justify-content-center text-center text-sm-start">
-          <!-- start footer column -->
-          <div
-            class="col-lg-3 col-sm-6 md-mb-35px"
-            data-anime='{ "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'
-          >
-            <span class="alt-font d-block text-white mb-10px fs-20"
-              ><i
-                class="feather icon-feather-map-pin align-text-bottom icon-extra-medium text-base-color me-10px"
-              ></i
-              >Kde nás nájdeš</span
-            >
-            <p class="w-80 lg-w-100 md-w-70 sm-w-90 xs-w-100 mb-5px">
-              Univerzitná 1, 010 26, Žilina
-            </p>
-            <a
-              href="https://maps.app.goo.gl/rBPcafuZjeBnVTDP6"
-              class="text-decoration-line-bottom text-uppercase fs-15 alt-font fw-500"
-              target="_blank"
-              >google maps</a
-            >
-          </div>
-          <!-- end footer column -->
-          <!-- start footer column -->
-          <div
-            class="col-lg-3 col-sm-6 md-mb-35px"
-            data-anime='{ "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'
-          >
-            <span class="alt-font d-block text-white mb-10px fs-20"
-              ><i
-                class="feather icon-feather-phone-call align-text-bottom icon-extra-medium text-base-color me-10px"
-              ></i
-              >Kontakty</span
-            >
-            <a href="mailto:studref@feit.uniza.sk">studref@feit.uniza.sk </a
-            ><br />
-            <a href="tel:+421 41 5132064" class="mb-5px d-inline-block"
-              >+421 41 5132064</a
-            ><br />
-          </div>
-          <!-- end footer column -->
-          <!-- start footer column -->
-          <div
-            class="col-lg-3 col-sm-6 xs-mb-35px"
-            data-anime='{ "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'
-          >
-            <span class="alt-font d-block text-white mb-10px fs-20"
-              ><i
-                class="feather icon-feather-wifi align-text-bottom icon-extra-medium text-base-color me-10px"
-              ></i
-              >Sociálne siete</span
-            >
-            <div
-              class="col-md-auto elements-social social-icon-style-04 text-center text-md-start ps-lg-0"
-              data-anime='{ "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'
-            >
-              <ul class="small-icon medium_grey">
-                <li class="m-0">
-                  <a
-                    class="facebook"
-                    href="https://facebook.com/feit.uniza.sk"
-                    target="_blank"
-                    ><i class="fa-brands fa-facebook-f"></i><span></span
-                  ></a>
-                </li>
-                <li class="m-0">
-                  <a
-                    class="instagram"
-                    href="https://instagram.com/feit_uniza"
-                    target="_blank"
-                    ><i class="fa-brands fa-instagram"></i><span></span
-                  ></a>
-                </li>
-                <li class="m-0">
-                  <a
-                    class="tiktok"
-                    href="https://tiktok.com/@feit_uniza"
-                    target="_blank"
-                    ><i class="fa-brands fa-tiktok"></i><span></span
-                  ></a>
-                </li>
-                <li class="m-0">
-                  <a
-                    class="discord"
-                    href="https://discord.com/invite/akzn6tQ9tt"
-                    target="_blank"
-                    ><i class="fa-brands fa-discord"></i><span></span
-                  ></a>
-                </li>
-                <li class="m-0">
-                  <a
-                    class="youtube"
-                    href="https://youtube.com/channel/UCtbu4ih0gz6iLU5XvHeqTKw/videos"
-                    target="_blank"
-                    ><i class="fa-brands fa-youtube"></i><span></span
-                  ></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- end footer column -->
-          <!-- start footer column -->
-          <div
-            class="col-lg-3 col-sm-6"
-            data-anime='{ "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'
-          >
-            <div
-              class="d-inline-block w-100 newsletter-style-01 position-relative"
-            >
-              <span class="alt-font d-block text-white mb-10px fs-20"
-                ><i
-                  class="ti-shopping-cart align-text-bottom icon-extra-medium text-base-color me-10px"
-                ></i
-                >FEIT Eshop</span
-              >
-              <a
-                href="https://eshop.feit.uniza.sk"
-                class="mb-5px d-inline-block"
-                target="_blank"
-                >https://eshop.feit.uniza.sk</a
-              >
-            </div>
-          </div>
-          <!-- end footer column -->
-        </div>
-        <div class="row align-items-center pt-6 md-pt-50px">
-          <!-- start footer column -->
-          <div class="col-lg-3 col-sm-6 text-center text-sm-start">
-            <a href="/" class="footer-logo d-inline-block"
-              ><img
-                src="feitImages/feit-logo-white.png"
-                data-at2x="feitImages/feit-logo-white@2x.png"
-                alt=""
-            /></a>
-          </div>
-          <!-- end footer column -->
-          <!-- start footer column -->
-          <div class="col-lg-6 order-1 order-sm-3 order-lg-1 md-mt-15px">
-            <ul class="footer-navbar alt-font text-center lh-normal">
-              <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-              <li class="nav-item">
-                <a href="/#costudovat" class="nav-link">Čo študovať?</a>
-              </li>
-              <li class="nav-item">
-                <a href="/#preco" class="nav-link">Prečo na FEIT?</a>
-              </li>
-              <li class="nav-item">
-                <a href="/#zivot" class="nav-link">Študentský život</a>
-              </li>
-            </ul>
-          </div>
-          <!-- end footer column -->
-          <!-- start footer column -->
-          <div
-            class="col-lg-3 col-sm-6 order-3 order-sm-2 order-lg-3 text-center text-sm-end xs-mt-10px last-paragraph-no-margin"
-          >
-            <p>
-              &COPY; Copyright 2024
-              <a
-                href="https://feit.uniza.sk/"
-                target="_blank"
-                class="text-decoration-line-bottom text-white"
-                >FEIT UNIZA</a
-              >
-            </p>
-          </div>
-          <!-- end footer column -->
-        </div>
-      </div>
-    </footer>
+	<div
+		  x-data="{
+    footer: [],
+    loadFooterComponent() {
+        fetch('http://localhost:8080/api/v1/components/footer')
+            .then(res => res.json())
+            .then(data => this.footer = data);
+    }
+		}" x-init="loadFooterComponent()"
+	>
+		<footer
+			  class="bg-extra-dark-slate-blue background-position-right-top background-no-repeat md-background-image-none"
+			  style="background-image: url('feitImages/about-bg.png')"
+			  id="kontakty"
+		>
+			<div class="container">
+				<div class="row justify-content-center text-center text-sm-start">
+					<!-- start footer column -->
+					<div
+						  class="col-lg-3 col-sm-6 md-mb-35px"
+					>
+            <span
+				  class="alt-font d-block text-white mb-10px fs-20"
+			><i
+				  class="feather icon-feather-map-pin align-text-bottom icon-extra-medium text-base-color me-10px"
+			></i
+			>Kde nás nájdeš</span
+			>
+						<p class="w-80 lg-w-100 md-w-70 sm-w-90 xs-w-100 mb-5px" x-text="footer.locationColumn.text">
+						</p>
+						<a
+							  :href="footer.locationColumn.url"
+							  class="text-decoration-line-bottom text-uppercase fs-15 alt-font fw-500"
+							  target="_blank"
+						>google maps</a
+						>
+					</div>
+					<!-- end footer column -->
+					<!-- start footer column -->
+					<div
+						  class="col-lg-3 col-sm-6 md-mb-35px"
+					>
+            <span
+				  class="alt-font d-block text-white mb-10px fs-20"
+			><i
+				  class="feather icon-feather-phone-call align-text-bottom icon-extra-medium text-base-color me-10px"
+			></i
+			>Kontakty</span
+			>
+						<template x-for="menuItem in footer.contactColumn">
+							<a :href="menuItem.url" x-text="menuItem.text"></a
+							><br />
+						</template>
+					</div>
+					<!-- end footer column -->
+					<!-- start footer column -->
+					<div
+						  class="col-lg-3 col-sm-6 xs-mb-35px"
+					>
+            <span
+				  class="alt-font d-block text-white mb-10px fs-20"
+			><i
+				  class="feather icon-feather-wifi align-text-bottom icon-extra-medium text-base-color me-10px"
+			></i>Sociálne siete</span>
+						<div class="col-md-auto elements-social social-icon-style-04 text-center text-md-start ps-lg-0">
+							<ul class="small-icon medium_grey">
+								<template x-for="menuItem in footer.socialColumn">
+									<li class="m-0">
+										<a
+											  :class="menuItem.text"
+											  :href="menuItem.url"
+											  target="_blank"
+										>
+											<i :class="['fa-brands', menuItem.icon]"></i><span></span>
+										</a>
+									</li>
+								</template>
+							</ul>
+						</div>
+					</div>
+					<!-- end footer column -->
+					<!-- start footer column -->
+					<div
+						  class="col-lg-3 col-sm-6"
+					>
+						<div
+							  class="d-inline-block w-100 newsletter-style-01 position-relative"
+						>
+              <span
+					class="alt-font d-block text-white mb-10px fs-20"
+			  ><i
+					class="ti-shopping-cart align-text-bottom icon-extra-medium text-base-color me-10px"
+			  ></i
+			  >FEIT Shop</span
+			  >
+							<template x-for="menuItem in footer.shopColumn">
+								<a
+									  :href="menuItem.url"
+									  class="mb-5px d-inline-block"
+									  target="_blank"
+									  x-text="menuItem.text"
+								></a
+								>
+							</template>
+						</div>
+					</div>
+					<!-- end footer column -->
+				</div>
+				<div class="row align-items-center pt-6 md-pt-50px">
+					<!-- start footer column -->
+					<div class="col-lg-3 col-sm-6 text-center text-sm-start">
+						<a
+							  href="/" class="footer-logo d-inline-block"
+						><img
+							  src="feitImages/feit-logo-white.png"
+							  data-at2x="feitImages/feit-logo-white@2x.png"
+							  alt=""
+						/></a>
+					</div>
+					<!-- end footer column -->
+					<!-- start footer column -->
+					<div class="col-lg-6 order-1 order-sm-3 order-lg-1 md-mt-15px">
+						<ul class="footer-navbar alt-font text-center lh-normal">
+							<template x-for="navItem in footer.navigationColumn">
+								<li class="nav-item">
+									<a :href="navItem.url" class="nav-link" x-text="navItem.text"></a>
+								</li>
+							</template>
+						</ul>
+					</div>
+					<!-- end footer column -->
+					<!-- start footer column -->
+					<div
+						  class="col-lg-3 col-sm-6 order-3 order-sm-2 order-lg-3 text-center text-sm-end xs-mt-10px last-paragraph-no-margin"
+					>
+						<p>
+							&COPY; Copyright 2025
+							<a
+								  href="https://feit.uniza.sk/"
+								  target="_blank"
+								  class="text-decoration-line-bottom text-white"
+							>FEIT UNIZA</a
+							>
+						</p>
+					</div>
+					<!-- end footer column -->
+				</div>
+			</div>
+		</footer>
+	</div>
     <!-- end footer -->
     <!-- start scroll progress -->
     <div class="scroll-progress d-none d-xxl-block">
@@ -832,5 +772,6 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/vendors.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/alpine-dropdown-fix.js"></script>
   </body>
 </html>
