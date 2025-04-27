@@ -53,8 +53,13 @@
     <!-- End Google Tag Manager (noscript) -->
     <!-- start header -->
 	<div
-		  x-data="{
-menubar: {},
+    x-data="{
+menubar: {
+  button: {
+    url: '',
+    text: ''
+  }
+},
 loadMenuBar() {
 fetch('http://localhost:8080/api/v1/components/menu')
 .then(res => res.json())
@@ -115,19 +120,19 @@ fetch('http://localhost:8080/api/v1/components/menu')
 								</template>
 
 
-								<template x-for="dropdownMenuItems in menubar.dropdownMenuItems">
+								<template x-for="(dropdownMenuItems, index) in menubar.dropdownMenuItems">
 									<li class="nav-item dropdown dropdown-with-icon">
 										<a href="#" class="nav-link" x-text="dropdownMenuItems.text"></a>
 										<i
 											  class="fa-solid fa-angle-down dropdown-toggle"
-											  :id="'navbarDropdownMenuLink-' + $index"
+											  :id="'navbarDropdownMenuLink-' + index"
 											  role="button"
 											  data-bs-toggle="dropdown"
 											  aria-expanded="false"
 										></i>
 										<ul
 											  class="dropdown-menu"
-											  :aria-labelledby="'navbarDropdownMenuLink-' + $index"
+											  :aria-labelledby="'navbarDropdownMenuLink-' + index"
 										>
 											<template x-for="list in dropdownMenuItems.dropdownMenuItems">
 												<li>
@@ -4339,8 +4344,17 @@ fetch('http://localhost:8080/api/v1/components/menu')
 
     <!-- start footer -->
 	<div
-		  x-data="{
-    footer: [],
+    x-data="{
+    footer: {
+        locationColumn: {
+            text: '',
+            url: ''
+        },
+        contactColumn: [],
+        socialColumn: [],
+        shopColumn: [],
+        navigationColumn: []
+    },
     loadFooterComponent() {
         fetch('http://localhost:8080/api/v1/components/footer')
             .then(res => res.json())

@@ -41,7 +41,6 @@ function initDropdowns() {
     }
   });
 
-  console.log('Dropdowns initialized with both click and hover support');
 }
 
 // Function to toggle dropdown on click
@@ -216,4 +215,4 @@ document.addEventListener('DOMContentLoaded', () => {
 initDropdowns();
 
 // Log when the script is loaded
-console.log('Alpine.js dropdown fix loaded with hover support');
+// console.log('Alpine.js dropdown fix loaded with hover support');

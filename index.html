@@ -67,8 +67,13 @@
 <!-- End Google Tag Manager (noscript) -->
 <!-- start header -->
 <div
-	  x-data="{
-menubar: {},
+   x-data="{
+menubar: {
+  button: {
+    url: '',
+    text: ''
+  }
+},
 loadMenuBar() {
 fetch('http://localhost:8080/api/v1/components/menu')
 .then(res => res.json())
@@ -129,19 +134,19 @@ fetch('http://localhost:8080/api/v1/components/menu')
 							</template>
 
 
-							<template x-for="dropdownMenuItems in menubar.dropdownMenuItems">
+							<template x-for="(dropdownMenuItems, index) in menubar.dropdownMenuItems">
 								<li class="nav-item dropdown dropdown-with-icon">
 									<a href="#" class="nav-link" x-text="dropdownMenuItems.text"></a>
 									<i
 										  class="fa-solid fa-angle-down dropdown-toggle"
-										  :id="'navbarDropdownMenuLink-' + $index"
+										  :id="'navbarDropdownMenuLink-' + index"
 										  role="button"
 										  data-bs-toggle="dropdown"
 										  aria-expanded="false"
 									></i>
 									<ul
 										  class="dropdown-menu"
-										  :aria-labelledby="'navbarDropdownMenuLink-' + $index"
+										  :aria-labelledby="'navbarDropdownMenuLink-' + index"
 									>
 										<template x-for="list in dropdownMenuItems.dropdownMenuItems">
 											<li>
@@ -365,8 +370,11 @@ fetch('http://localhost:8080/api/v1/components/menu')
 <!-- start section Preco študovať na FEIT?-->
 
 <div
-	  x-data="{
-    whyFeit: {},
+   x-data="{
+    whyFeit: {
+        whyFeitLists: [],
+        visible: false
+    },
     loadWhyFeit() {
         fetch('http://localhost:8080/api/v1/components/whyfeit')
             .then(res => res.json())
@@ -475,7 +483,7 @@ fetch('http://localhost:8080/api/v1/components/menu')
 												<i class="feather icon-feather-minus"></i
 												><span
 												  class="fw-600 fs-18 ls-minus-05px"
-												  x-text="whyFeit.whyFeitLists[0].title"
+												  x-text="whyFeit.whyFeitLists && whyFeit.whyFeitLists[0] ? whyFeit.whyFeitLists[0].title : ''"
 											></span
 											>
 											</div>
@@ -489,7 +497,7 @@ fetch('http://localhost:8080/api/v1/components/menu')
 										<div
 											  class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray text-light-gray"
 										>
-											<p x-text="whyFeit.whyFeitLists[0].description"></p>
+											<p x-text="whyFeit.whyFeitLists && whyFeit.whyFeitLists[0] ? whyFeit.whyFeitLists[0].description : ''"></p>
 										</div>
 									</div>
 								</div>
@@ -512,7 +520,7 @@ fetch('http://localhost:8080/api/v1/components/menu')
 												<i class="feather icon-feather-plus"></i
 												><span
 												  class="fw-600 fs-18 ls-minus-05px"
-												  x-text="whyFeit.whyFeitLists[1].title"
+												  x-text="whyFeit.whyFeitLists && whyFeit.whyFeitLists[1] ? whyFeit.whyFeitLists[1].title : ''"
 											></span
 											>
 											</div>
@@ -526,7 +534,7 @@ fetch('http://localhost:8080/api/v1/components/menu')
 										<div
 											  class="accordion-body last-paragraph-no-margin border-bottom border-color-light-medium-gray text-light-gray"
 										>
-											<p x-text="whyFeit.whyFeitLists[1].description"></p>
+											<p x-text="whyFeit.whyFeitLists && whyFeit.whyFeitLists[1] ? whyFeit.whyFeitLists[1].description : ''"></p>
 										</div>
 									</div>
 								</div>
@@ -549,7 +557,7 @@ fetch('http://localhost:8080/api/v1/components/menu')
 												<i class="feather icon-feather-plus"></i
 												><span
 												  class="fw-600 fs-18 ls-minus-05px"
-												  x-text="whyFeit.whyFeitLists[2].title"
+												  x-text="whyFeit.whyFeitLists && whyFeit.whyFeitLists[2] ? whyFeit.whyFeitLists[2].title : ''"
 											></span
 											>
 											</div>
@@ -563,7 +571,7 @@ fetch('http://localhost:8080/api/v1/components/menu')
 										<div
 											  class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent text-light-gray"
 										>
-											<p x-text="whyFeit.whyFeitLists[2].description"></p>
+											<p x-text="whyFeit.whyFeitLists && whyFeit.whyFeitLists[2] ? whyFeit.whyFeitLists[2].description : ''"></p>
 										</div>
 									</div>
 								</div>
@@ -2452,8 +2460,17 @@ fetch('http://localhost:8080/api/v1/components/menu')
 
 	<!-- start footer -->
 	<div
-		  x-data="{
-    footer: [],
+    x-data="{
+    footer: {
+        locationColumn: {
+            text: '',
+            url: ''
+        },
+        contactColumn: [],
+        socialColumn: [],
+        shopColumn: [],
+        navigationColumn: []
+    },
     loadFooterComponent() {
         fetch('http://localhost:8080/api/v1/components/footer')
             .then(res => res.json())
